@@ -6,7 +6,7 @@
 import java.util.*;
 
 public class MyGraph implements Graph {
-	private final HashMap<Vertex, ArrayList<Edge>> myMap;
+    private final HashMap<Vertex, ArrayList<Edge>> myMap;
     private final Collection<Vertex> vert;
     private final Collection<Edge> ed;
 	
