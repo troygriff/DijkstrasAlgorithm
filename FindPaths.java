@@ -5,16 +5,13 @@ import java.io.*;
  * Driver program that reads in a graph and prompts user for shortests paths in the graph.
  * (Intentionally without comments.  Read through the code to understand what it does.)
  */
-
 public class FindPaths {
 	public static void main(String[] args) {
 		if(args.length != 2) {
 			System.err.println("USAGE: java Paths <vertex_file> <edge_file>");
 			System.exit(1);
 		}
-
 		MyGraph g = readGraph(args[0],args[1]);
-
 		Scanner console = new Scanner(System.in);
 		Collection<Vertex> v = g.vertices();
                 Collection<Edge> e = g.edges();
@@ -34,9 +31,6 @@ public class FindPaths {
 				System.out.println("no such vertex");
 				System.exit(1);
 			}
-			
-			// YOUR CODE HERE: call shortestPath and print
-			// out the result
 		}
 	}
 
@@ -48,18 +42,15 @@ public class FindPaths {
 			System.err.println("FILE NOT FOUND: "+f1);
 			System.exit(2);
 		}
-
 		Collection<Vertex> v = new ArrayList<Vertex>();
 		while(s.hasNext())
 			v.add(new Vertex(s.next()));
-
 		try {
 			s = new Scanner(new File(f2));
 		} catch(FileNotFoundException e1) {
 			System.err.println("FILE NOT FOUND: "+f2);
 			System.exit(2);
 		}
-
 		Collection<Edge> e = new ArrayList<Edge>();
 		while(s.hasNext()) {
 			try {
@@ -72,7 +63,6 @@ public class FindPaths {
 				System.exit(3);
 			}
 		}
-
 		return new MyGraph(v,e);
 	}
 }
